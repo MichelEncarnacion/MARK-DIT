@@ -1,0 +1,290 @@
+:root {
+  --primary: #00305f;
+  --primary-light: #0a4a8f;
+  --accent: #38bdf8;
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --text: #101828;
+  --text-muted: #4b5565;
+  --border: #dfe4ea;
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
+  --radius: 14px;
+
+  --tag-news-bg: #e7f0ff;
+  --tag-news-text: #0a4a8f;
+  --tag-courses-bg: #e7f9f0;
+  --tag-courses-text: #0a7a4a;
+  --tag-edtech-bg: #fff3e0;
+  --tag-edtech-text: #a15c00;
+
+  color-scheme: light;
+  font-family: system-ui, 'Segoe UI', Roboto, -apple-system, sans-serif;
+}
+
+:root[data-theme='dark'] {
+  --primary: #0a4a8f;
+  --primary-light: #1c6fc9;
+  --accent: #7dd3fc;
+  --bg: #0b1220;
+  --surface: #121a2b;
+  --text: #e6eaf2;
+  --text-muted: #9aa5b8;
+  --border: #223049;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  --tag-news-bg: #12253f;
+  --tag-news-text: #7dd3fc;
+  --tag-courses-bg: #10301f;
+  --tag-courses-text: #6ee7a8;
+  --tag-edtech-bg: #3a2a0f;
+  --tag-edtech-text: #fbbf24;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: #fff;
+  border-radius: 0 0 24px 24px;
+  padding: 40px 20px 32px;
+  margin: 0 -20px 32px;
+}
+
+.hero-top {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.hero-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hero-tagline {
+  margin: 8px 0 4px;
+  color: #cfe0f5;
+  font-size: 1.05rem;
+}
+
+.hero-date {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.theme-toggle {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.status-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.status-bar button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.status-bar button:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+section.category {
+  margin-bottom: 40px;
+}
+
+.category-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.category-header h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.category-count {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-tag {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.card-tag.news {
+  background: var(--tag-news-bg);
+  color: var(--tag-news-text);
+}
+.card-tag.courses {
+  background: var(--tag-courses-bg);
+  color: var(--tag-courses-text);
+}
+.card-tag.edtech {
+  background: var(--tag-edtech-bg);
+  color: var(--tag-edtech-text);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+
+.card-footer a {
+  color: var(--primary-light);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  text-decoration: underline;
+}
+
+:root[data-theme='dark'] .card-footer a {
+  color: var(--accent);
+}
+
+.empty-state,
+.error-state {
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  text-align: center;
+}
+
+.error-state {
+  border-color: #e07a5f;
+  color: #b3401f;
+}
+
+:root[data-theme='dark'] .error-state {
+  color: #ff9d7a;
+}
+
+footer.app-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 48px;
+}
+
+@media (max-width: 600px) {
+  .hero-name {
+    font-size: 1.9rem;
+  }
+  .hero {
+    padding: 28px 16px 24px;
+  }
+}
