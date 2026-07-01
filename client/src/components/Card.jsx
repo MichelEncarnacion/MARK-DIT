@@ -1,3 +1,5 @@
+import { useSpeech } from '../context/SpeechContext';
+
 const CATEGORY_LABEL = {
   news: 'Noticia',
   courses: 'Curso IA',
@@ -13,9 +15,25 @@ function formatDate(value) {
 
 export default function Card({ item }) {
   const date = formatDate(item.publishedAt);
+  const { isSupported, speakingId, speak } = useSpeech();
+  const isSpeaking = speakingId === item.link;
+
   return (
     <article className="card">
-      <span className={`card-tag ${item.category}`}>{CATEGORY_LABEL[item.category] || item.category}</span>
+      <div className="card-top">
+        <span className={`card-tag ${item.category}`}>{CATEGORY_LABEL[item.category] || item.category}</span>
+        {isSupported && (
+          <button
+            type="button"
+            className={`speak-btn${isSpeaking ? ' speaking' : ''}`}
+            onClick={() => speak(item.link, `${item.title}. ${item.summary}`)}
+            aria-label={isSpeaking ? 'Detener lectura' : 'Leer en voz alta'}
+            title={isSpeaking ? 'Detener lectura' : 'Leer en voz alta'}
+          >
+            {isSpeaking ? '⏸' : '🔊'}
+          </button>
+        )}
+      </div>
       <h3>{item.title}</h3>
       <p>{item.summary}</p>
       <div className="card-footer">

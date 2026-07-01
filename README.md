@@ -8,7 +8,10 @@ Bot informativo tech de la Dirección de Innovación Tecnológica (DIT) de la Re
 - **Tech Educativa** — herramientas y novedades útiles para instituciones educativas.
 
 Cada resumen lo genera el LLM propio del DIT (DeepSeek R1 70B en la ThinkStation PGX) con la
-personalidad de MARK-DIT.
+personalidad de MARK-DIT. Cada tarjeta y cada sección tienen un botón 🔊 para que MARK-DIT lea
+el contenido en voz alta (español), usando la Web Speech API del navegador — sin backend, sin
+costo y sin API keys adicionales. La calidad/disponibilidad de la voz depende del navegador y
+sistema operativo de quien visita el sitio.
 
 ## Arquitectura
 

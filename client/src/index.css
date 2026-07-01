@@ -161,7 +161,8 @@ section.category {
 
 .category-header {
   display: flex;
-  align-items: baseline;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 16px;
 }
@@ -193,6 +194,13 @@ section.category {
   gap: 10px;
 }
 
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .card-tag {
   align-self: flex-start;
   font-size: 0.72rem;
@@ -201,6 +209,47 @@ section.category {
   letter-spacing: 0.04em;
   padding: 4px 10px;
   border-radius: 999px;
+}
+
+.speak-btn {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  border-radius: 999px;
+  width: 30px;
+  height: 30px;
+  line-height: 1;
+  font-size: 0.95rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.speak-btn:hover {
+  border-color: var(--primary-light);
+}
+
+.speak-btn.speaking {
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+}
+
+.speak-section-btn {
+  margin-left: auto;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.speak-section-btn:hover {
+  border-color: var(--primary-light);
+  color: var(--primary-light);
+}
+
+:root[data-theme='dark'] .speak-section-btn:hover {
+  color: var(--accent);
 }
 
 .card-tag.news {
