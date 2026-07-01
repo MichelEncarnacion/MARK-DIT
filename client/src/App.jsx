@@ -20,7 +20,11 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
-    fetch('/api/feed')
+    // URL relativa al documento actual, para que apunte a
+    // .../mark-dit/api/feed y no a la raiz del dominio cuando la app
+    // se sirve desde un subdirectorio.
+    const feedUrl = new URL('api/feed', document.baseURI);
+    fetch(feedUrl)
       .then((res) => res.json())
       .then(setFeed)
       .catch(() => setError('No se pudo cargar el contenido. Intenta de nuevo más tarde.'));
