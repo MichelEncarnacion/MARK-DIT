@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Hero from './components/Hero';
 import Section from './components/Section';
+import Splash from './components/Splash';
 
 function getInitialTheme() {
   if (typeof window === 'undefined') return 'light';
@@ -61,6 +62,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <Splash />
       <Hero
         theme={theme}
         onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}

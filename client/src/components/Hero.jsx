@@ -8,7 +8,7 @@ const TODAY = new Date().toLocaleDateString('es-MX', {
 });
 
 // La ruta del mascota es relativa (BASE_URL) para funcionar desde un subdirectorio.
-const MASCOT = `${import.meta.env.BASE_URL}mark-dit.svg`;
+const MASCOT = `${import.meta.env.BASE_URL}kibi.svg`;
 
 export default function Hero({ theme, onToggleTheme, totals }) {
   const { news = 0, courses = 0, edtech = 0 } = totals || {};
@@ -17,17 +17,17 @@ export default function Hero({ theme, onToggleTheme, totals }) {
   return (
     <header className="hero">
       <div className="hero-toolbar">
-        <span className="hero-brand">MARK-DIT · DIT Red SPES</span>
+        <span className="hero-brand">KIBI · Inteligencia · DIT UPAEP</span>
         <ThemeToggle theme={theme} onToggle={onToggleTheme} />
       </div>
 
       <div className="hero-stage">
         <div className="mascot">
-          <img src={MASCOT} alt="MARK-DIT, tu asistente tech" />
+          <img src={MASCOT} alt="Kibi, tu asistente tech" />
         </div>
 
         <div className="speech" role="status">
-          <p className="speech-hi">¡Hola! Soy <strong>MARK-DIT</strong> <span aria-hidden="true">🤖</span></p>
+          <p className="speech-hi">¡Hola! Soy <strong>Kibi</strong> <span aria-hidden="true">🤖</span></p>
           <p className="speech-body">
             {hayContenido ? (
               <>

@@ -1,17 +1,17 @@
 :root {
-  --primary: #00305f;
-  --primary-light: #0a4a8f;
-  --accent: #38bdf8;
-  --bg: #f4f6f9;
+  --primary: #ed1c24;
+  --primary-light: #ff3b43;
+  --accent: #ff5a60;
+  --bg: #f6f2f2;
   --surface: #ffffff;
-  --text: #101828;
-  --text-muted: #4b5565;
-  --border: #dfe4ea;
-  --shadow: 0 1px 3px rgba(16, 24, 40, 0.08), 0 1px 2px rgba(16, 24, 40, 0.06);
+  --text: #1a1113;
+  --text-muted: #6b565a;
+  --border: #ecdcdd;
+  --shadow: 0 1px 3px rgba(40, 16, 18, 0.08), 0 1px 2px rgba(40, 16, 18, 0.06);
   --radius: 14px;
 
-  --tag-news-bg: #e7f0ff;
-  --tag-news-text: #0a4a8f;
+  --tag-news-bg: #ffe4e5;
+  --tag-news-text: #c40f16;
   --tag-courses-bg: #e7f9f0;
   --tag-courses-text: #0a7a4a;
   --tag-edtech-bg: #fff3e0;
@@ -22,18 +22,18 @@
 }
 
 :root[data-theme='dark'] {
-  --primary: #0a4a8f;
-  --primary-light: #1c6fc9;
-  --accent: #7dd3fc;
-  --bg: #0b1220;
-  --surface: #121a2b;
-  --text: #e6eaf2;
-  --text-muted: #9aa5b8;
-  --border: #223049;
-  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --primary: #ff3b43;
+  --primary-light: #ff5a60;
+  --accent: #ff7a7f;
+  --bg: #0c0507;
+  --surface: #17090b;
+  --text: #f3e8e9;
+  --text-muted: #b79a9d;
+  --border: #3a1f22;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.35);
 
-  --tag-news-bg: #12253f;
-  --tag-news-text: #7dd3fc;
+  --tag-news-bg: #3a1216;
+  --tag-news-text: #ff7a7f;
   --tag-courses-bg: #10301f;
   --tag-courses-text: #6ee7a8;
   --tag-edtech-bg: #3a2a0f;
@@ -49,7 +49,7 @@
 body {
   margin: 0;
   background:
-    radial-gradient(1100px 460px at 50% -180px, rgba(56, 189, 248, 0.14), transparent 60%),
+    radial-gradient(1100px 460px at 50% -180px, rgba(237, 28, 36, 0.16), transparent 60%),
     var(--bg);
   background-attachment: fixed;
   color: var(--text);
@@ -73,14 +73,15 @@ a {
 .hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, #00305f 0%, #0a4a8f 55%, #1c6fc9 100%);
+  background:
+    radial-gradient(circle at 50% -10%, #2a0508 0%, #17060a 52%, #0b0406 100%);
   color: #fff;
   border-radius: 0 0 28px 28px;
-  padding: 18px 24px 42px;
+  padding: 18px 24px 44px;
   margin: 0 -20px 36px;
 }
 
-/* Blobs decorativos para un fondo con más vida */
+/* Resplandor rojo detrás de Kibi para el estilo "espectacular" */
 .hero::before,
 .hero::after {
   content: "";
@@ -89,18 +90,19 @@ a {
   pointer-events: none;
 }
 .hero::before {
-  width: 280px;
-  height: 280px;
-  top: -130px;
-  right: -70px;
-  background: rgba(255, 255, 255, 0.08);
+  width: 320px;
+  height: 320px;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(237, 28, 36, 0.35), transparent 70%);
 }
 .hero::after {
   width: 200px;
   height: 200px;
   bottom: -110px;
   left: -50px;
-  background: rgba(56, 189, 248, 0.18);
+  background: radial-gradient(circle, rgba(237, 28, 36, 0.22), transparent 70%);
 }
 
 .hero-toolbar {
@@ -154,12 +156,14 @@ a {
 
 .speech {
   position: relative;
-  background: #ffffff;
-  color: #0f2744;
+  background: rgba(22, 7, 10, 0.66);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(237, 28, 36, 0.38);
+  color: #f3e8e9;
   border-radius: 20px;
   padding: 18px 22px;
   max-width: 540px;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
 }
 /* Colita del bocadillo apuntando al robot */
 .speech::before {
@@ -168,7 +172,7 @@ a {
   left: -13px;
   top: 40px;
   border: 9px solid transparent;
-  border-right-color: #ffffff;
+  border-right-color: rgba(237, 28, 36, 0.5);
   border-left: 0;
 }
 
@@ -176,22 +180,22 @@ a {
   margin: 0 0 6px;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #00305f;
+  color: #ff5a60;
 }
 .speech-body {
   margin: 0;
   font-size: 1rem;
   line-height: 1.55;
-  color: #33465f;
+  color: #e9d7d9;
 }
 .speech-body b {
-  color: #00305f;
+  color: #ff7a7f;
 }
 .speech-date {
   display: inline-block;
   margin-top: 12px;
   font-size: 0.8rem;
-  color: #6b7a90;
+  color: #b79a9d;
   text-transform: capitalize;
 }
 
@@ -209,7 +213,7 @@ a {
     top: -13px;
     transform: translateX(-50%);
     border: 9px solid transparent;
-    border-bottom-color: #ffffff;
+    border-bottom-color: rgba(237, 28, 36, 0.5);
     border-top: 0;
   }
 }
@@ -443,5 +447,81 @@ footer.app-footer {
   }
   .hero {
     padding: 28px 16px 24px;
+  }
+}
+
+/* ===== Entrada espectacular (Splash) ===== */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, #2a0508 0%, #140409 46%, #0a0203 100%);
+  transition: opacity 0.55s ease;
+}
+.splash-out {
+  opacity: 0;
+  pointer-events: none;
+}
+.splash-rays {
+  position: absolute;
+  inset: -60%;
+  background: repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(237, 28, 36, 0.16) 0deg 5deg,
+    transparent 5deg 13deg
+  );
+  -webkit-mask: radial-gradient(circle at 50% 50%, #000 0%, transparent 60%);
+  mask: radial-gradient(circle at 50% 50%, #000 0%, transparent 60%);
+  animation: splash-spin 22s linear infinite;
+}
+.splash-inner {
+  position: relative;
+  text-align: center;
+}
+.splash-kibi {
+  width: 220px;
+  max-width: 60vw;
+  height: auto;
+  filter: drop-shadow(0 0 36px rgba(237, 28, 36, 0.6));
+  animation: splash-kibi-in 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.splash-name {
+  margin: 10px 0 2px;
+  color: #ff2b33;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 24px rgba(237, 28, 36, 0.7);
+  animation: splash-fade-up 0.6s 0.45s both;
+}
+.splash-tag {
+  margin: 0;
+  color: #9a5a5f;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  animation: splash-fade-up 0.6s 0.65s both;
+}
+@keyframes splash-spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes splash-kibi-in {
+  from { opacity: 0; transform: scale(0.6) translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes splash-fade-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-rays,
+  .splash-kibi,
+  .splash-name,
+  .splash-tag {
+    animation: none;
   }
 }

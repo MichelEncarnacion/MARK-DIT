@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
-  <rect width="48" height="48" rx="10" fill="#00305F"/>
-  <text x="24" y="33" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#7DD3FC" text-anchor="middle">M</text>
+  <rect width="48" height="48" rx="11" fill="#0c0507"/>
+  <rect x="10" y="12" width="28" height="22" rx="7" fill="#ed1c24"/>
+  <rect x="14" y="16" width="20" height="14" rx="5" fill="#b8bfc4"/>
+  <rect x="19" y="19" width="4" height="7" rx="2" fill="#fff"/>
+  <rect x="25" y="19" width="4" height="7" rx="2" fill="#fff"/>
+  <circle cx="24" cy="9" r="3" fill="#ff5a60"/>
 </svg>
