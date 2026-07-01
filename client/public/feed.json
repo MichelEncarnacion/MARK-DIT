@@ -1,0 +1,116 @@
+{
+  "updatedAt": "2026-07-01T13:00:00.000Z",
+  "categories": {
+    "news": [
+      {
+        "title": "Anthropic lanza Claude Sonnet 5, ya es el modelo por defecto",
+        "link": "https://www.anthropic.com/news",
+        "source": "Anthropic",
+        "publishedAt": "2026-06-30T00:00:00.000Z",
+        "category": "news",
+        "summary": "Anthropic soltó Claude Sonnet 5 el 30 de junio y desde el 1 de julio es el modelo por defecto para cuentas Free y Pro. Es el Sonnet más 'agentic' hasta ahora y rinde cerca del Opus 4.8 en varias tareas. Para el DIT importa porque significa más capacidad a menor costo para automatizar tareas académicas y administrativas."
+      },
+      {
+        "title": "California despliega Claude al 50% para todas sus agencias estatales",
+        "link": "https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026",
+        "source": "AI News",
+        "publishedAt": "2026-06-29T00:00:00.000Z",
+        "category": "news",
+        "summary": "El gobierno de California anunció el despliegue de IA más grande de un estado en EE.UU.: cada agencia estatal, y las ciudades y condados que se sumen, podrán usar Claude con 50% de descuento. Señal clara para el sector público y educativo: los acuerdos institucionales con IA ya son la norma, no un experimento."
+      },
+      {
+        "title": "Los usuarios de IA migran del 'gasto sin freno' a la eficiencia",
+        "link": "https://www.cnbc.com/2026/06/26/openai-anthropic-new-ai-spending-reality-as-users-shift-to-efficiency.html",
+        "source": "CNBC",
+        "publishedAt": "2026-06-26T00:00:00.000Z",
+        "category": "news",
+        "summary": "CNBC reporta que los usuarios de OpenAI y Anthropic están dejando de 'quemar tokens' sin control para enfocarse en eficiencia. Traducción para el DIT: la pregunta ya no es qué modelo es más grande, sino cuál resuelve la tarea con menos costo. Exactamente la lógica detrás de tener un LLM propio corriendo en la PGX."
+      },
+      {
+        "title": "GPT-5.6 y Gemini 3.5 Pro llegan en las próximas semanas",
+        "link": "https://www.buildfastwithai.com/blogs/ai-news-today-june-26-2026",
+        "source": "AI News",
+        "publishedAt": "2026-06-26T00:00:00.000Z",
+        "category": "news",
+        "summary": "GPT-5.6 viene en días y ya rompió récords de rendimiento; Gemini 3.5 Pro apunta a julio. La competencia entre modelos frontera se acelera y salen mejoras cada pocas semanas. Para la Red SPES conviene diseñar procesos que no dependan de un solo proveedor y aprovechar lo mejor de cada uno."
+      },
+      {
+        "title": "Andrej Karpathy se une a Anthropic para volver a I+D",
+        "link": "https://www.anthropic.com/news",
+        "source": "Anthropic",
+        "publishedAt": null,
+        "category": "news",
+        "summary": "Andrej Karpathy, referente mundial en la enseñanza de IA, se sumó a Anthropic para trabajar en la frontera de los modelos de lenguaje. Más allá del fichaje, su material divulgativo ha formado a miles de personas; vale la pena seguirlo como fuente de contenido educativo para el DIT."
+      }
+    ],
+    "courses": [
+      {
+        "title": "Anthropic Academy: 18 cursos gratis de IA con certificado",
+        "link": "https://www.anthropic.com/learn",
+        "source": "Anthropic (oficial)",
+        "publishedAt": null,
+        "category": "courses",
+        "summary": "Anthropic Academy ofrece 18 cursos gratis con certificado, en tres pistas: AI Fluency para perfiles no técnicos, uso general de Claude, y desarrollo con la API. Es el punto de partida ideal para capacitar a docentes y personal del DIT sin costo y con contenido oficial."
+      },
+      {
+        "title": "Curso corto gratis de DeepLearning.AI con Anthropic",
+        "link": "https://www.deeplearning.ai/",
+        "source": "DeepLearning.AI",
+        "publishedAt": null,
+        "category": "courses",
+        "summary": "DeepLearning.AI y Anthropic tienen un curso corto gratis (impartido por Colt Steele) que cubre los fundamentos de la API de Claude: prompting multimodal, prompt caching, tool use y computer-use. Combina la teoría de Andrew Ng con las herramientas reales que sí vas a desplegar."
+      },
+      {
+        "title": "Ruta de Claude Code dentro de Anthropic Academy",
+        "link": "https://www.anthropic.com/learn",
+        "source": "Anthropic (oficial)",
+        "publishedAt": null,
+        "category": "courses",
+        "summary": "Anthropic Academy incluye una ruta dedicada a Claude Code para automatizar tareas de desarrollo, scripting y mantenimiento de software. Muy útil para el equipo técnico del DIT que quiera mantener y extender herramientas internas como este mismo bot."
+      },
+      {
+        "title": "Guía de los mejores cursos gratis de IA de 2026",
+        "link": "https://freeacademy.ai/blog/best-free-claude-ai-courses-2026",
+        "source": "FreeAcademy.ai",
+        "publishedAt": null,
+        "category": "courses",
+        "summary": "Recopilación de los mejores cursos gratis de IA de 2026 (Anthropic, Google, DeepLearning.AI). La recomendación práctica: primero la teoría de prompting con Andrew Ng y luego las herramientas específicas de Anthropic. Buen mapa de ruta para armar un plan de capacitación en el DIT."
+      }
+    ],
+    "edtech": [
+      {
+        "title": "En 2026 la IA se vuelve pilar de la estrategia universitaria",
+        "link": "https://www.insidehighered.com/news/tech-innovation/artificial-intelligence/2026/01/05/5-predictions-how-ai-will-shape-higher-ed",
+        "source": "Inside Higher Ed",
+        "publishedAt": "2026-01-05T00:00:00.000Z",
+        "category": "edtech",
+        "summary": "Según Inside Higher Ed, en 2026 la IA deja de ser un experimento aislado para convertirse en pilar de la estrategia institucional: admisiones, tutoría, servicios estudiantiles y accesibilidad. Es un marco directo para que la Red SPES ordene y priorice su propia estrategia de IA."
+      },
+      {
+        "title": "El reto 2026: unificar datos y sistemas educativos aislados",
+        "link": "https://campustechnology.com/articles/2026/01/29/2026-predictions-for-ai-and-ed-tech-what-industry-leaders-are-saying.aspx",
+        "source": "Campus Technology",
+        "publishedAt": "2026-01-29T00:00:00.000Z",
+        "category": "edtech",
+        "summary": "Una tendencia clave para 2026: las instituciones buscarán unificar datos y flujos de trabajo (LMS, admisiones, becas, facturación) que nunca se diseñaron para hablar entre sí, sin tener que reemplazar todo. Un reto muy concreto y aterrizado para la infraestructura de la Red SPES."
+      },
+      {
+        "title": "86% de las organizaciones educativas ya usan IA generativa",
+        "link": "https://www.oecd.org/en/publications/oecd-digital-education-outlook-2026_062a7394-en.html",
+        "source": "OECD / Microsoft",
+        "publishedAt": null,
+        "category": "edtech",
+        "summary": "Un reporte de Microsoft indica que el 86% de las organizaciones educativas ya usan IA generativa, la tasa más alta de cualquier industria, y el mercado de IA educativa pasaría de 7.5 mil millones de dólares en 2025 a más de 112 mil millones en 2034. La pregunta ya no es si adoptar IA, sino cómo hacerlo bien."
+      },
+      {
+        "title": "13 predicciones de edtech e innovación para 2026",
+        "link": "https://www.ecampusnews.com/digital-innovation/2026/01/01/draft-2026-predictions/",
+        "source": "eCampus News",
+        "publishedAt": "2026-01-01T00:00:00.000Z",
+        "category": "edtech",
+        "summary": "eCampus News reúne 13 predicciones de edtech, innovación e IA para 2026. Funciona como termómetro de hacia dónde va el sector, para que el DIT elija pilotos con sentido en lugar de perseguir cada moda tecnológica."
+      }
+    ]
+  },
+  "sourceErrors": []
+}

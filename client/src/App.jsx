@@ -20,14 +20,32 @@ export default function App() {
   }, [theme]);
 
   useEffect(() => {
-    // URL relativa al documento actual, para que apunte a
-    // .../mark-dit/api/feed y no a la raiz del dominio cuando la app
-    // se sirve desde un subdirectorio.
-    const feedUrl = new URL('api/feed', document.baseURI);
-    fetch(feedUrl)
-      .then((res) => res.json())
-      .then(setFeed)
-      .catch(() => setError('No se pudo cargar el contenido. Intenta de nuevo más tarde.'));
+    // Se intenta primero el API en vivo (contenido fresco cuando corre el
+    // servidor Node) y, si no responde, el feed.json estatico incluido en el
+    // build. Asi la app muestra contenido aunque Lienzo solo sirva archivos
+    // estaticos y no ejecute server.js. Ambas URLs son relativas al documento
+    // para funcionar desde un subdirectorio (.../mark-dit/).
+    const load = async () => {
+      const candidates = [
+        new URL('api/feed', document.baseURI),
+        new URL('feed.json', document.baseURI),
+      ];
+      for (const url of candidates) {
+        try {
+          const res = await fetch(url);
+          if (!res.ok) continue;
+          const data = await res.json();
+          if (data && data.categories) {
+            setFeed(data);
+            return;
+          }
+        } catch {
+          // intenta la siguiente fuente
+        }
+      }
+      setError('No se pudo cargar el contenido. Intenta de nuevo más tarde.');
+    };
+    load();
   }, []);
 
   const categories = feed?.categories || { news: [], courses: [], edtech: [] };
