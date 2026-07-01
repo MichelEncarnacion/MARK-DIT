@@ -1,7 +1,7 @@
 import Card from './Card';
 import { useSpeech } from '../context/SpeechContext';
 
-export default function Section({ title, items }) {
+export default function Section({ title, intro, items }) {
   const { isSupported, speakingId, speak } = useSpeech();
   const sectionId = `section:${title}`;
   const isSpeakingSection = speakingId === sectionId;
@@ -22,6 +22,7 @@ export default function Section({ title, items }) {
           </button>
         )}
       </div>
+      {intro && <p className="category-intro">{intro}</p>}
       {items.length === 0 ? (
         <div className="empty-state">Todavía no hay contenido en esta sección. Vuelve más tarde.</div>
       ) : (

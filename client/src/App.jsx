@@ -53,9 +53,19 @@ export default function App() {
     ? new Date(feed.updatedAt).toLocaleString('es-MX', { dateStyle: 'long', timeStyle: 'short' })
     : null;
 
+  const totals = {
+    news: categories.news.length,
+    courses: categories.courses.length,
+    edtech: categories.edtech.length,
+  };
+
   return (
     <div className="app">
-      <Hero theme={theme} onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))} />
+      <Hero
+        theme={theme}
+        onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
+        totals={totals}
+      />
 
       <div className="status-bar">
         <span>{updatedAt ? `Última actualización: ${updatedAt}` : 'Cargando última actualización…'}</span>
@@ -65,9 +75,21 @@ export default function App() {
 
       {!error && (
         <>
-          <Section title="Noticias" items={categories.news} />
-          <Section title="Cursos IA" items={categories.courses} />
-          <Section title="Tech Educativa" items={categories.edtech} />
+          <Section
+            title="Noticias"
+            intro="Lo más relevante en tecnología e IA, sin el ruido."
+            items={categories.news}
+          />
+          <Section
+            title="Cursos IA"
+            intro="Para aprender a usar IA gratis — con prioridad en lo oficial de Anthropic."
+            items={categories.courses}
+          />
+          <Section
+            title="Tech Educativa"
+            intro="Herramientas y tendencias que le sirven directo a la Red SPES."
+            items={categories.edtech}
+          />
         </>
       )}
 
