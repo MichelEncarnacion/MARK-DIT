@@ -1,31 +1,31 @@
 import { useEffect, useState } from 'react';
-import Hero from './components/Hero';
-import Section from './components/Section';
 import Splash from './components/Splash';
+import KibiPresenter from './components/KibiPresenter';
 
-function getInitialTheme() {
-  if (typeof window === 'undefined') return 'light';
-  const saved = window.localStorage.getItem('mark-dit-theme');
-  if (saved) return saved;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
+const TODAY = new Date().toLocaleDateString('es-MX', {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+// Orden en que Kibi narra: primero noticias, luego cursos, luego edtech.
+const ORDER = ['news', 'courses', 'edtech'];
 
 export default function App() {
-  const [theme, setTheme] = useState(getInitialTheme);
   const [feed, setFeed] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    window.localStorage.setItem('mark-dit-theme', theme);
-  }, [theme]);
+    // Escenario visual fijo (azul marino oscuro), sin selector de tema.
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }, []);
 
   useEffect(() => {
     // Se intenta primero el API en vivo (contenido fresco cuando corre el
     // servidor Node) y, si no responde, el feed.json estatico incluido en el
-    // build. Asi la app muestra contenido aunque Lienzo solo sirva archivos
-    // estaticos y no ejecute server.js. Ambas URLs son relativas al documento
-    // para funcionar desde un subdirectorio (.../mark-dit/).
+    // build. Ambas URLs son relativas al documento para funcionar desde un
+    // subdirectorio (.../mark-dit/).
     const load = async () => {
       const candidates = [
         new URL('api/feed', document.baseURI),
@@ -50,54 +50,24 @@ export default function App() {
   }, []);
 
   const categories = feed?.categories || { news: [], courses: [], edtech: [] };
-  const updatedAt = feed?.updatedAt
-    ? new Date(feed.updatedAt).toLocaleString('es-MX', { dateStyle: 'long', timeStyle: 'short' })
-    : null;
-
-  const totals = {
-    news: categories.news.length,
-    courses: categories.courses.length,
-    edtech: categories.edtech.length,
-  };
+  const items = ORDER.flatMap((key) =>
+    (categories[key] || []).map((item) => ({ ...item, category: key }))
+  );
 
   return (
-    <div className="app">
+    <div className="stage">
       <Splash />
-      <Hero
-        theme={theme}
-        onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))}
-        totals={totals}
-      />
 
-      <div className="status-bar">
-        <span>{updatedAt ? `Última actualización: ${updatedAt}` : 'Cargando última actualización…'}</span>
-      </div>
+      <header className="stage-top">
+        <span className="stage-brand">KIBI · Inteligencia · DIT UPAEP</span>
+        <span className="stage-date">{TODAY}</span>
+      </header>
 
-      {error && <div className="error-state">{error}</div>}
-
-      {!error && (
-        <>
-          <Section
-            title="Noticias"
-            intro="Lo más relevante en tecnología e IA, sin el ruido."
-            items={categories.news}
-          />
-          <Section
-            title="Cursos IA"
-            intro="Para aprender a usar IA gratis — con prioridad en lo oficial de Anthropic."
-            items={categories.courses}
-          />
-          <Section
-            title="Tech Educativa"
-            intro="Herramientas y tendencias que le sirven directo a la Red SPES."
-            items={categories.edtech}
-          />
-        </>
+      {error ? (
+        <div className="error-state">{error}</div>
+      ) : (
+        <KibiPresenter items={items} />
       )}
-
-      <footer className="app-footer">
-        MARK-DIT · Dirección de Innovación Tecnológica · Red SPES
-      </footer>
     </div>
   );
 }
