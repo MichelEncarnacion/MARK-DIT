@@ -38,6 +38,17 @@ async function runRefresh(trigger) {
   }
 }
 
+// Lienzo monta la app en un subdirectorio (p. ej. /dit/tools/lienzo/app/mark-dit)
+// y puede reenviar la ruta completa a este proceso sin quitar ese prefijo. Aqui
+// lo recortamos: si la URL trae un prefijo antes de una ruta conocida, la
+// normalizamos para que las rutas de abajo (/assets, /api, /feed.json) coincidan
+// igual, se haya montado en la raiz o en un subdirectorio.
+app.use((req, res, next) => {
+  const idx = req.url.search(/\/(assets\/|api\/|feed\.json|favicon\.svg)/);
+  if (idx > 0) req.url = req.url.slice(idx);
+  next();
+});
+
 app.get('/api/feed', (req, res) => {
   res.json(readFeed());
 });
